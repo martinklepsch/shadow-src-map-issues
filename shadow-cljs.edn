@@ -1,0 +1,25 @@
+{:deps   {}
+ :builds {;; The issue with a minimal build like this is that
+          ;; the compiler will optimize most things away, so we
+          ;; need to fine some kind of minimal repro that is just
+          ;; big enough to avoid that.
+          :srcmaptest {:target :node-library
+                       :exports-var icebreaker.server.srcmaptest/exports
+                       :output-dir "functions/compiled"
+                       :output-to "functions/index.js"
+                       :compiler-options {:source-map true
+                                          ; :static-fns true
+                                          ; :reader-features #{:node}
+                                          ; :fn-invoke-direct true
+                                          }
+                       }
+          ;; seems to work with --debug
+          :srcmaptestscript {:target :node-script
+                             :main icebreaker.server.srcmaptest/-main
+                             :output-dir "functions/compiled"
+                             :output-to "functions/index.js"
+                             :compiler-options {:source-map true
+                                                ; :static-fns true
+                                                ; :reader-features #{:node}
+                                                ; :fn-invoke-direct true
+                                                }}}}
