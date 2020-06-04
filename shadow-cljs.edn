@@ -1,4 +1,4 @@
-{:deps   {}
+{:source-paths ["src"]
  :builds {;; The issue with a minimal build like this is that
           ;; the compiler will optimize most things away, so we
           ;; need to fine some kind of minimal repro that is just
