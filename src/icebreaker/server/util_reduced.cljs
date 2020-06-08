@@ -1,5 +1,4 @@
-(ns icebreaker.server.util-reduced
-  (:require ["firebase-functions" :as fb-functions]))
+(ns icebreaker.server.util-reduced)
 
 (defn ^:export something-that-throws [x]
   (throw (js/Error. (str "[" x "] Fabricated example exception"))))
@@ -23,10 +22,7 @@
 (defn https-fn
   "Turn a function into a Firebase HTTPs function handler."
   [handler-fn]
-  ; (if (rand-nth [true false])
-  ;   (handler-fn))
-
-  (.. fb-functions -https (onRequest handler-fn)))
+  handler-fn)
 
 (defn wrap-handlers
   [handlers & middleware]
