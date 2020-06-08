@@ -16,8 +16,8 @@
           ;; seems to work with --debug
           :srcmaptestscript {:target :node-script
                              :main icebreaker.server.srcmaptest/-main
-                             :output-dir "functions/compiled"
-                             :output-to "functions/index.js"
+                             :output-dir "script/compiled"
+                             :output-to "script/index.js"
                              :compiler-options {:source-map true
                                                 ; :static-fns true
                                                 ; :reader-features #{:node}
