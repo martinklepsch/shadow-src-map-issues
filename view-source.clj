@@ -7,6 +7,5 @@
     (println (:out (shell/sh "fish" "-c"
                              (str "nl -ba " w-src " | "
                                   "tail -n +" src-line " | "
-                                  "head | "
-                                  "bat -l clojure"
+                                  "head"
                                   ))))))
